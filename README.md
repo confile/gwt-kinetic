@@ -6,7 +6,7 @@ A thin [GWT](http://www.gwtproject.org/) wrapper for the [kinetic.js](http://www
 This library is based on kinetic 5.x. It is an extension of [KineticGWT](https://github.com/neothemachine/KineticGWT).
 
 
-If you are interested in this lib you can contact me confilem (at) googlemail (dot) com
+If you are interested in this lib you can contact me: confilem (at) googlemail (dot) com
 
 
 ## How it works!
