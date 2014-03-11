@@ -11,6 +11,14 @@ If you are interested in this lib you can contact me: confilem (at) googlemail (
 
 ## How it works!
 
+
+Include the following line in before </head> of your static html file which hosts the GWT page.
+
+    <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v5.0.1.min.js"></script>
+
+
+In your Java Code: 
+
     // Kinetic needs a special div in the DOM
     Element div = DOM.createDiv();
     RootPanel.getBodyElement().appendChild(div);
