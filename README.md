@@ -24,11 +24,11 @@ In your Java Code:
     RootPanel.getBodyElement().appendChild(div);
     
     // Setup stage
-    Stage stage = Kinetic.createStage(div, 400, 400);
-    Layer layer = Kinetic.createLayer();
+    KStage stage = Kinetic.createStage(div, 400, 400);
+    KLayer layer = Kinetic.createLayer();
     stage.add(layer);
     
-    Rectangle c = Kinetic.createRectangle(new Box2d(10, 10, 200, 200)); 
-    layer.add(c);
+    KText text = Kinetic.createText("hello world"); 
+    layer.add(text);
     stage.draw();
   
