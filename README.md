@@ -35,3 +35,17 @@ In your Java Code:
     layer.add(text);
     stage.draw();
   
+  
+Shapes and Elements supported from Kinetic.js: 
+
+- Circle
+- Group
+- Layer
+- Stage
+- Image
+- Line
+- Node
+- Rect
+- Shape
+- Text
+- RegularPolygon
