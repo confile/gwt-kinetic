@@ -16,6 +16,9 @@ Include the following line in before </head> of your static html file which host
 
     <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v5.0.1.min.js"></script>
 
+In your module gwt.xml file: 
+
+    <inherits name="org.michaelgorski.gwt-kinetic"/>
 
 In your Java Code: 
 
