@@ -5,6 +5,10 @@ A thin [GWT](http://www.gwtproject.org/) wrapper for the [kinetic.js](http://www
 
 This library is based on kinetic 5.x. It is an extension of [KineticGWT](https://github.com/neothemachine/KineticGWT).
 
+##Current Release
+
+##Current Snapshot
+1.0-SNAPSHOT
 
 ## How it works!
 

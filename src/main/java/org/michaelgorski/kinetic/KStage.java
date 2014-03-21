@@ -6,6 +6,7 @@ import java.util.List;
 import org.michaelgorski.kinetic.events.KEventHandler;
 import org.michaelgorski.kinetic.events.KEventTypeEnum;
 
+import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
 
 
@@ -117,11 +118,12 @@ public class KStage extends KContainer {
 			
 	
 	/**
-	 * Convert a dataURL to a blob.
+	 * Convert a dataURL to a blob. <br>
+	 * Note: Use {@link #dataURItoBlob()} instead to get the best cross browser support.
 	 * @param dataURI
 	 * @return
 	 */
-	public final native String dataURItoBlob(String dataURI) /*-{
+	public final native JavaScriptObject dataURItoBlobFallback(String dataURI) /*-{
 	    // convert base64 to raw binary data held in a string
 	    var byteString = atob(dataURI.split(',')[1]);
 	 
@@ -140,6 +142,21 @@ public class KStage extends KContainer {
 	    return blob;		
 	}-*/;
 	
+	
+	/**
+	 * Convert a dataURL to a blob. <br>
+	 * To use this function you have to include canvas-to-blob.js from
+	 * here: https://github.com/blueimp/JavaScript-Canvas-to-Blob
+	 * @param dataURI
+	 * @return
+	 */
+	public final native JavaScriptObject dataURItoBlob(String dataURI) /*-{
+		var getBlob = $entry(function(url) {
+			return $wnd.dataURLtoBlob(url);
+		});				
+		return getBlob(dataURI);
+	}-*/;
+		
 	
 	/**
 	 * Register an event handler on stage.getContent(). I.e., <br>
