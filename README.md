@@ -55,7 +55,7 @@ Shapes and Elements supported from Kinetic.js:
 
 More features upon request or if you make a pul request. 
 
-### Using events
+#### Using events
 
     shape.addEventHandler(EventTypeTouch.TAP, new KEventHandler() {
 			
