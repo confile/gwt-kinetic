@@ -19,8 +19,8 @@ public class KineticEvent extends JavaScriptObject {
 	 * Get the event target (the node that triggered this event). Useful for handling events in ancestors.
 	 * @return The original event target
 	 */
-	public native final KShape getTargetNode() /*-{
-		return this.targetNode;
+	public native final KShape getTarget() /*-{
+		return this.target;
 	}-*/;
 	
 	

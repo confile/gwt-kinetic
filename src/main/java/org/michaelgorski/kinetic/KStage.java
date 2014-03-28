@@ -110,6 +110,7 @@ public class KStage extends KContainer {
 	public final native void toDataURL(String mimeType, double quality, DataUrlCallback c) /*-{
 		this.toDataURL({
 			mimeType: mimeType,
+			quality: quality,
 	      	callback: function(dataUrl) {
 	        	c.@org.michaelgorski.kinetic.KStage.DataUrlCallback::onSuccess(Ljava/lang/String;)(dataUrl);
 	      	}

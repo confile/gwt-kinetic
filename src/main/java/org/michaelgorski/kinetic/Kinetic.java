@@ -20,7 +20,7 @@ public class Kinetic {
 	 * @return A stage object.
 	 * @see KStage
 	 */
-	public static native KStage createStage(Element stageContainer, int stageWidth, int stageHeight) /*-{
+	public static native KStage createStage(Element stageContainer, double stageWidth, double stageHeight) /*-{
 	    var createStage = $entry(function(stageContainer, stageWidth, stageHeight) {
 		    return new $wnd.Kinetic.Stage({
 		        container: stageContainer,
@@ -43,6 +43,21 @@ public class Kinetic {
 			return new $wnd.Kinetic.Layer();
 		});
 	    return createLayer();
+	}-*/;
+	
+	
+	/**
+	 * Create a fast layer onject.
+	 * FastLayer for ultra fast rendering. If you don't need node nesting, 
+	 * mouse and touch interactions, or event pub/sub, you should use FastLayer 
+	 * instead of Layer to create your layers. It renders about 2x faster than normal layers.
+	 * @return
+	 */
+	public static native KFastLayer createFastLayer() /*-{
+		var createFastLayer = $entry(function() {
+			return new $wnd.Kinetic.FastLayer();
+		});
+	    return createFastLayer();
 	}-*/;
 
 	

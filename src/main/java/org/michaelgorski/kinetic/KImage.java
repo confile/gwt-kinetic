@@ -47,4 +47,24 @@ public class KImage extends KShape {
 	}-*/;
 	
 	
+	/**
+	 * Set crop.
+	 * @param x
+	 * @param y
+	 * @param width
+	 * @param height
+	 */
+	public final native void setCrop(double x, double y, double width, double height) /*-{
+		this.crop({
+			x: x,
+		  	y: y,
+		  	width: width,
+		  	height: height
+		});
+		this.width(width).height(height);
+	}-*/;
+	
+	
+	
+	
 }

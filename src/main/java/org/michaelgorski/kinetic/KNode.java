@@ -496,7 +496,7 @@ public abstract class KNode extends JavaScriptObject {
 	public final native void rotate(double theta) /*-{
 		this.rotate(theta);
 	}-*/;
-	
+
 	
 	/**
 	 * Get rotation in degrees.
