@@ -15,7 +15,7 @@ This library is based on kinetic 5.x. It is an extension of [KineticGWT](https:/
 
 Include the following line in before </head> of your static html file which hosts the GWT page.
 
-    <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v5.0.1.min.js"></script>
+    <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v5.1.0.min.js"></script>
 
 In your module gwt.xml file: 
 
@@ -42,6 +42,7 @@ Shapes and Elements supported from Kinetic.js:
 - Circle
 - Group
 - Layer
+- FastLayer
 - Stage
 - Image
 - Line
@@ -54,5 +55,14 @@ Shapes and Elements supported from Kinetic.js:
 
 More features upon request or if you make a pul request. 
 
+# Using events
+
+    shape.addEventHandler(EventTypeTouch.TAP, new KEventHandler() {
+			
+			@Override
+			public void handle(KineticEvent event) {
+
+            }
+    }
 
 If you are interested in this lib you can contact me: confilem (at) googlemail (dot) com
