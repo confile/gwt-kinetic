@@ -197,6 +197,27 @@ public abstract class KNode extends JavaScriptObject {
 	
 	
 	/**
+	 * Allow horizontal dragging inside borders: minX < x < maxX. Note that to enable dragging 
+	 * you have to use {@link #setDraggable(boolean)} set to true.
+	 * @param minX
+	 * @param maxX
+	 */
+	public final native void setDraggableHorizontalOnly(double minX, double maxX) /*-{
+		this.dragBoundFunc(function(pos){
+			var X = pos.x;
+
+          	if (X < minX) { X = minX; }
+          	if (X > maxX) { X = maxX; }
+			
+			return {
+		    	x: X,
+		    	y: this.getAbsolutePosition().y
+		  	};
+		});
+	}-*/;
+	
+	
+	/**
 	 * If true dragging is only allowed vertically. Note that to enable dragging 
 	 * you have to use {@link #setDraggable(boolean)} set to true.
 	 * @param value
@@ -218,6 +239,30 @@ public abstract class KNode extends JavaScriptObject {
 			  	};
 			});
 		}
+	}-*/;
+	
+	
+	
+	/**
+	 * Allowed vertical dragging inside borders: minY < y <  maxY. Note that to enable dragging 
+	 * you have to use {@link #setDraggable(boolean)} set to true.
+	 * @param minY
+	 * @param maxY
+	 */
+	public final native void setDraggableVerticalOnly(double minY, double maxY) /*-{
+
+		this.dragBoundFunc(function(pos){
+			var Y = pos.y;
+			
+			if (Y < minY) { Y = minY; }
+          	if (Y > maxY) { Y = maxY; }
+			
+			return {
+		    	x: this.getAbsolutePosition().x,
+		    	y: Y
+		  	};
+		});
+
 	}-*/;
 	
 	

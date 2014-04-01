@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.michaelgorski.kinetic.events.KEventHandler;
 import org.michaelgorski.kinetic.events.KEventTypeEnum;
+import org.michaelgorski.kinetic.events.KStageEventHandler;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
@@ -165,7 +166,7 @@ public class KStage extends KContainer {
 	 * @param type A single event type to listen for.
 	 * @param handler The handler.
 	 */
-	public final void addStageEventHandler(KEventTypeEnum type, KEventHandler handler) {
+	public final void addStageEventHandler(KEventTypeEnum type, KStageEventHandler handler) {
 		addStageEventHandler(Arrays.asList(type), handler);
 	}
 	
@@ -176,7 +177,7 @@ public class KStage extends KContainer {
 	 * @param type List of events to listen for
 	 * @param handler The handler.
 	 */
-	public final void addStageEventHandler(List<KEventTypeEnum> eventTypes, KEventHandler handler)	{
+	public final void addStageEventHandler(List<KEventTypeEnum> eventTypes, KStageEventHandler handler)	{
 		addStageEventHandlers(eventListToString(eventTypes), handler);
 	}
 	
@@ -186,9 +187,9 @@ public class KStage extends KContainer {
 	 * @param eventString The string containing events to register.
 	 * @param handler The handler to execute.
 	 */
-	protected final native void addStageEventHandlers(String eventString, KEventHandler handler) /*-{
+	protected final native void addStageEventHandlers(String eventString, KStageEventHandler handler) /*-{
 		this.getContent().addEventListener(eventString, function(evt) {
-			handler.@org.michaelgorski.kinetic.events.KEventHandler::handle(Lorg/michaelgorski/kinetic/events/KineticEvent;)(evt);
+			handler.@org.michaelgorski.kinetic.events.KStageEventHandler::handle(Lorg/michaelgorski/kinetic/events/KineticStageEvent;)(evt);
 		}, false);
 	}-*/;
 	

@@ -8,6 +8,7 @@ import com.google.gwt.core.client.JsArray;
 
 /**
  * The wrapper class for Kinetic native events. Used in KineticGWT event handling system.
+ * This event is used with addEventHandler only.
  * 
  * @author SkyCrawl
  */
@@ -29,7 +30,7 @@ public class KineticEvent extends JavaScriptObject {
 	 * @return
 	 */
 	public native final JsArray<Touch> getTouches() /*-{
-		return this.touches;
+		return this.evt.touches;
 	}-*/;
 	
 	

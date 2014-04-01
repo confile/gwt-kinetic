@@ -3,7 +3,8 @@ package org.michaelgorski.kinetic.events;
 import com.google.gwt.core.client.JavaScriptObject;
 
 /**
- * This represents a touch point from a {@link KineticEvent}.
+ * This represents a touch point from a {@link KineticEvent} or
+ * a {@link KineticStageEvent}.
  * @author mg
  *
  */
