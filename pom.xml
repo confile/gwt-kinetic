@@ -13,16 +13,12 @@
 	<groupId>org.michaelgorski</groupId>
 	<artifactId>gwt-kinetic</artifactId>
 	<version>1.2.2-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
+<!--	<packaging>jar</packaging> -->
 	<name>GWT Kinetic</name>
 
 	<url>https://github.com/confile/gwt-kinetic</url>
 	<description>A thin GWT wrapper for the kinetic.js library.</description>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<gwtversion>2.6.0</gwtversion>
-	</properties>
 
 	<licenses>
 		<license>
@@ -31,7 +27,11 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-
+	
+	<issueManagement>
+		<system>GitHub</system>
+	    <url>https://github.com/confile/gwt-kinetic/issues</url>
+	</issueManagement>
 
 	<developers>
 		<developer>
@@ -44,8 +44,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:confile/gwt-kinetic.git</connection>
 		<developerConnection>scm:git:git@github.com:confile/gwt-kinetic.git</developerConnection>
-		<url>http://github.com/confile/gwt-kinetic.git</url>
-		<tag>gwt-kinetic-1.0</tag>
+		<url>https://github.com/confile/gwt-kinetic.git</url>
 	</scm>
 
 
@@ -62,6 +61,29 @@
 		</repository>
 	</distributionManagement>
 	
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<gwtversion>2.6.0</gwtversion>
+		
+		<!-- maven -->
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+		<maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+		<maven-surefire-plugin.version>2.16</maven-surefire-plugin.version>
+		
+		<!-- GitHub Sites -->
+		<github.version>0.9</github.version>
+		
+		<!-- Used for releasing to sonatype as command line parameter -->
+        <gpg.passphrase>SetAsParam</gpg.passphrase>
+        <github.username>SetAsParam</github.username>
+        <github.password>SetAsParam</github.password>
+		
+<!--		<gwt.loglevel>INFO</gwt.loglevel> -->
+ <!--       <gwt.outputstyle>OBF</gwt.outputstyle> -->
+	</properties>
+	
 
 	<build>
 		<plugins>
@@ -74,12 +96,32 @@
 				</configuration>
 			</plugin>
 
+
+			<!-- run 'mvn site' to output javadocs to gh-pages -->
+			<!-- run 'mvn javadoc:javadoc -X' to debug -->
+			<!-- http://docs.oracle.com/javase/1.5.0/docs/tooldocs/windows/javadoc.html -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version>
+				<version>${maven-javadoc-plugin.version}</version>
 				<configuration>
+					<aggregate>true</aggregate>
+                    <source>1.6</source>
+                    <encoding>UTF-8</encoding>
+                    <maxmemory>1g</maxmemory>
+                    <links>
+                        <link>http://java.sun.com/javase/6/docs/api/</link>
+                    </links>
  				</configuration>
+				<executions>
+					<execution>
+				        <id>attach-javadocs</id>
+				        <phase>verify</phase>
+				        <goals>
+				        	<goal>jar</goal>
+				        </goals>
+				    </execution>
+				</executions>
 			</plugin>
 
 			<plugin>
@@ -91,7 +133,7 @@
 						<id>attach-sources</id>
 						<phase>verify</phase>
 						<goals>
-							<goal>jar-no-fork</goal>
+							<goal>jar</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -131,11 +173,13 @@
 			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
-				</configuration>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <releaseProfiles>release</releaseProfiles>
+                    <arguments>-Psonatype-oss-release -Prelease -Dgpg.passphrase=${gpg.passphrase}</arguments>
+                </configuration>
 			</plugin>
 
 
