@@ -12,7 +12,7 @@
 	
 	<groupId>org.michaelgorski</groupId>
 	<artifactId>gwt-kinetic</artifactId>
-	<version>1.2.4.7</version>
+	<version>1.2.4.8-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>GWT Kinetic</name>
 
@@ -44,7 +44,7 @@
 		<connection>scm:git:git@github.com:confile/gwt-kinetic.git</connection>
 		<developerConnection>scm:git:git@github.com:confile/gwt-kinetic.git</developerConnection>
 		<url>https://github.com/confile/gwt-kinetic.git</url>
-	  <tag>gwt-kinetic-1.2.4.7</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 
