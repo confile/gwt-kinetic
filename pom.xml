@@ -13,8 +13,7 @@
 	<groupId>org.michaelgorski</groupId>
 	<artifactId>gwt-kinetic</artifactId>
 	<version>1.2.3-SNAPSHOT</version>
-	<packaging>pom</packaging>
-<!--	<packaging>jar</packaging> -->
+	<packaging>jar</packaging>
 	<name>GWT Kinetic</name>
 
 	<url>https://github.com/confile/gwt-kinetic</url>
