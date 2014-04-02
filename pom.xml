@@ -12,7 +12,7 @@
 	
 	<groupId>org.michaelgorski</groupId>
 	<artifactId>gwt-kinetic</artifactId>
-	<version>1.2.3-SNAPSHOT</version>
+	<version>1.2.3</version>
 	<packaging>jar</packaging>
 	<name>GWT Kinetic</name>
 
