@@ -174,7 +174,7 @@ public class KStage extends KContainer {
 	/**
 	 * Register an event handler for a multitude on stage.getContent(). I.e., <br>
 	 * stage.getContent().addEventListener('touchmove', function(evt) { ... }, false); <br> 
-	 * @param type List of events to listen for
+	 * @param eventTypes List of events to listen for
 	 * @param handler The handler.
 	 */
 	public final void addStageEventHandler(List<KEventTypeEnum> eventTypes, KStageEventHandler handler)	{

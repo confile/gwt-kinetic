@@ -10,9 +10,10 @@ package org.michaelgorski.kinetic.events;
  */
 public interface KEventHandler
 {
+	
 	/**
 	 * Handles an event. Called by Kinetic.
-	 * @return True, if the event should stop being processed further by bubbling up in the hierarchy. False, if bubbling should continue. 
+	 * @param event
 	 */
 	public void handle(KineticEvent event);
 }
