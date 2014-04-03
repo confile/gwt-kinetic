@@ -51,6 +51,9 @@ Shapes and Elements supported from Kinetic.js:
 - Rect
 - Shape
 - Text
+- Ellipse
+- Star
+- Wedge
 - RegularPolygon
 
 
