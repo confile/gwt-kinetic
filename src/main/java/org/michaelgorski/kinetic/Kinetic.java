@@ -33,6 +33,18 @@ public class Kinetic {
 	
 	
 	/**
+	 * Create an ellipse shape.
+	 * @return KEllipse
+	 */
+	public static native KEllipse createcreateEllipse() /*-{
+	    var createEllipse = $entry(function() {
+	    	return new $wnd.Kinetic.Ellipse();
+	    });
+	    return createEllipse();
+	}-*/;
+	
+	
+	/**
 	 * Create a layer object.
 	 * The layer will be independent and needs to be added to a stage.
 	 * @return A new layer object
@@ -84,6 +96,18 @@ public class Kinetic {
 	    	return new $wnd.Kinetic.RegularPolygon();
 	    });
 	    return createRect();
+	}-*/;
+	
+	
+	/**
+	 * Create a star shape.
+	 * @return KStar
+	 */
+	public static native KStar createStar() /*-{
+	    var createStar = $entry(function() {
+	    	return new $wnd.Kinetic.Star();
+	    });
+	    return createStar();
 	}-*/;
 	
 	
@@ -252,8 +276,17 @@ public class Kinetic {
 		return createText(text);
 	}-*/;
 	
-	
-	
+		
+	/**
+	 * Create a wedget shape.
+	 * @return KWedge
+	 */
+	public static native KWedge createWedge() /*-{
+	    var createWedge = $entry(function() {
+	    	return new $wnd.Kinetic.Wedge();
+	    });
+	    return createWedge();
+	}-*/;
 
 
 }
